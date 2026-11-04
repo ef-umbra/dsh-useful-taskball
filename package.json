@@ -1,6 +1,6 @@
 {
   "name": "dsh-useful-taskball",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "DSH 跨会话任务状态悬浮球：扇形分色、完成会话收纳与状态突变提醒。",
   "keywords": [
     "dsh",

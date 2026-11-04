@@ -56,12 +56,6 @@ dsh plugin add github:ef-umbra/dsh-useful-taskball
 
 > GitHub 安装时 DSH 会问你是否允许它运行构建脚本，选允许即可 —— 包需要现场编译出产物。
 
-**装到别的项目里**：
-
-```bash
-npm install dsh-useful-taskball
-```
-
 ## 怎么用
 
 **球本身**
