@@ -32,14 +32,8 @@
 
 ## 安装
 
-> 尚未发布到 npm，目前从源码安装。
-
 ```bash
-git clone <仓库地址>
-cd dsh-useful-taskball
-npm install
-npm run build
-dsh plugin add link:<仓库绝对路径>
+dsh plugin add github:ef-umbra/dsh-useful-taskball
 ```
 
 要求 DeepSeek Harness `0.2.1-rc.3` 或更高。
