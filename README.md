@@ -2,12 +2,9 @@
 
 [![Powered by DSH](https://img.shields.io/badge/Powered%20by-DSH-4B6BFB)](https://github.com/deepseek-ai/deepseek-harness)
 [![npm version](https://img.shields.io/npm/v/dsh-useful-taskball)](https://www.npmjs.com/package/dsh-useful-taskball)
-[![npm downloads](https://img.shields.io/npm/dm/dsh-useful-taskball)](https://www.npmjs.com/package/dsh-useful-taskball)
 [![license](https://img.shields.io/npm/l/dsh-useful-taskball)](LICENSE)
 [![node](https://img.shields.io/node/v/dsh-useful-taskball)](package.json)
 [![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.3-blue)](https://github.com/deepseek-ai/deepseek-harness)
-[![GitHub stars](https://img.shields.io/github/stars/ef-umbra/dsh-useful-taskball)](https://github.com/ef-umbra/dsh-useful-taskball/stargazers)
-[![last commit](https://img.shields.io/github/last-commit/ef-umbra/dsh-useful-taskball)](https://github.com/ef-umbra/dsh-useful-taskball/commits/main)
 
 给 DeepSeek Harness 加一个悬浮球，**用颜色告诉你哪个会话出问题了、哪个在等你、哪个还在跑**。
 
