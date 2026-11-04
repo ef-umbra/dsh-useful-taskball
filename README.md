@@ -1,8 +1,19 @@
 # Taskball · 任务状态悬浮球
 
+[![Powered by DSH](https://img.shields.io/badge/Powered%20by-DSH-4B6BFB)](https://github.com/deepseek-ai/deepseek-harness)
+[![npm version](https://img.shields.io/npm/v/dsh-useful-taskball)](https://www.npmjs.com/package/dsh-useful-taskball)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-useful-taskball)](https://www.npmjs.com/package/dsh-useful-taskball)
+[![license](https://img.shields.io/npm/l/dsh-useful-taskball)](LICENSE)
+[![node](https://img.shields.io/node/v/dsh-useful-taskball)](package.json)
+[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.3-blue)](https://github.com/deepseek-ai/deepseek-harness)
+[![GitHub stars](https://img.shields.io/github/stars/ef-umbra/dsh-useful-taskball)](https://github.com/ef-umbra/dsh-useful-taskball/stargazers)
+[![last commit](https://img.shields.io/github/last-commit/ef-umbra/dsh-useful-taskball)](https://github.com/ef-umbra/dsh-useful-taskball/commits/main)
+
 给 DeepSeek Harness 加一个悬浮球，**用颜色告诉你哪个会话出问题了、哪个在等你、哪个还在跑**。
 
 不用再一个个点开会话看进度 —— 看一眼球就知道了。
+
+> **这是第三方社区插件，不是 DeepSeek Harness 官方项目**，与 DeepSeek 官方无隶属或背书关系。
 
 ## 五种颜色
 
@@ -32,11 +43,27 @@
 
 ## 安装
 
+要求 DeepSeek Harness `0.2.1-rc.3` 或更高。
+
+**从 npm 装**（推荐）：
+
+```bash
+dsh plugin add dsh-useful-taskball
+```
+
+**从 GitHub 直接装**：
+
 ```bash
 dsh plugin add github:ef-umbra/dsh-useful-taskball
 ```
 
-要求 DeepSeek Harness `0.2.1-rc.3` 或更高。
+> GitHub 安装时 DSH 会问你是否允许它运行构建脚本，选允许即可 —— 包需要现场编译出产物。
+
+**装到别的项目里**：
+
+```bash
+npm install dsh-useful-taskball
+```
 
 ## 怎么用
 
@@ -77,6 +104,18 @@ dsh plugin add github:ef-umbra/dsh-useful-taskball
 
 - 状态突变提醒（默认开）：关掉之后任何气泡都不弹，包括失败提醒。
 - 完成态保留时长：已完成会话在面板里留多久。
+
+## 关于这个项目
+
+**这是一个 vibe coding 项目** —— 由作者与 AI 协作写成，人负责提需求、判断效果、拍板决策，AI 负责写代码。
+
+这意味着：
+
+- **可用性优先于工程完备**。功能是真机反复验证过的，但代码风格与架构不一定符合所有人的审美。
+- **没有团队维护**。这是个个人项目，更新节奏取决于作者自己的使用需要。
+- **问题欢迎提，但不保证响应时间**。Issues 会看，修不修、什么时候修看具体情况。
+
+如果你在意这些，使用前请自行评估。代码是 MIT 许可的，你可以随意 fork 或改写。
 
 ## 许可
 
