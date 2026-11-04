@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "Taskball · 任务状态悬浮球",
+    "description": "用扇形分色展示跨会话任务状态，收纳已完成会话并提醒状态变化。"
+  },
+  "taskball": {
+    "ball": {
+      "empty": "暂无任务状态"
+    },
+    "settings": {
+      "pending": "Taskball 设置表单将在 UI 设计定稿后提供。"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "AMD",
+    "moduleResolution": "Node",
+    "lib": ["ES2022", "DOM"],
+    "outFile": "lib/.client-build/bundle.js",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/client/**/*.ts", "src/client/globals.d.ts"]
+}

@@ -1,0 +1,37 @@
+# ---- Dependencies and package managers ----
+node_modules/
+.pnpm-store/
+.npm-cache/
+*.tgz
+package-lock.json
+
+# ---- Build output ----
+# `lib/` is a reproducible artifact: `prepare` rebuilds it on install and on
+# `npm publish`, so it is never committed.
+lib/
+dist/
+build/
+out/
+*.tsbuildinfo
+*.js.map
+*.d.ts.map
+coverage/
+
+# ---- Runtime state and user data ----
+.dsh/
+*.log
+
+# ---- Machine / environment ----
+.env
+.env.local
+.env.*.local
+scratch/
+*.tmp
+*.bak
+
+# ---- Editors and OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

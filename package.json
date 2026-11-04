@@ -1,0 +1,105 @@
+{
+  "name": "dsh-useful-taskball",
+  "version": "0.10.1",
+  "description": "DSH 跨会话任务状态悬浮球：扇形分色、完成会话收纳与状态突变提醒。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "plugin",
+    "task-status",
+    "session",
+    "overlay",
+    "widget"
+  ],
+  "author": "ef-umbra <319873670+ef-umbra@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ef-umbra/dsh-useful-taskball.git"
+  },
+  "homepage": "https://github.com/ef-umbra/dsh-useful-taskball#readme",
+  "bugs": {
+    "url": "https://github.com/ef-umbra/dsh-useful-taskball/issues"
+  },
+  "icon": "./icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/config.js",
+    "lib/index.js",
+    "lib/model.mjs",
+    "lib/replay.js",
+    "lib/store.js",
+    "lib/types/**/*.d.ts",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:host && npm run build:client && npm run build:model",
+    "build:host": "tsc -p tsconfig.json",
+    "build:client": "tsc -p tsconfig.client.json && node scripts/build.mjs",
+    "build:model": "tsc -p tsconfig.model.json && node scripts/copy-model.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
+    "test": "npm run build && npm run test:only",
+    "test:only": "node --test --test-isolation=none test/host-smoke.mjs test/host-store.test.mjs test/host-replay.test.mjs test/state-machine.test.mjs test/ui-render.test.mjs test/panel-options.test.mjs test/panel-dom.test.mjs test/drafts.test.mjs test/strip.test.mjs test/color-blind.test.mjs test/sector-animation.test.mjs test/drag-click.test.mjs test/ball-geometry.test.mjs test/snap-distance.test.mjs test/quick-panel.test.mjs",
+    "check:compat": "node scripts/check-compat.mjs",
+    "prepare": "npm run build"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.5 <5",
+    "@deepseek-ai/dsh": ">=0.2.1-rc.3 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

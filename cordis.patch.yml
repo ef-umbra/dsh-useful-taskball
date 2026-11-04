@@ -1,0 +1,8 @@
+- insert:
+    - id: dsh-useful-taskball
+      name: dsh-useful-taskball
+      config:
+        completionRetentionMinutes: 30
+        bubbleDurationMs: 2000
+        bubbleOnCompletion: true
+        showFoldedCount: true

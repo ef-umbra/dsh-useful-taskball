@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"
+     role="img" aria-labelledby="tbt tbd">
+  <title id="tbt">Taskball · 磨砂心四色球（透明底）</title>
+  <desc id="tbd">四色扇形表达四种任务状态，外圈白色包边，中心为磨砂质感的乳白球。无底板，透明背景。</desc>
+
+  <defs>
+    <!-- 球体高光 / 暗角 -->
+    <radialGradient id="lit" cx="0.31" cy="0.22" r="0.80">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="0.44" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dim" cx="0.56" cy="0.58" r="0.55">
+      <stop offset="0.44" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.14"/>
+    </radialGradient>
+
+    <!-- 磨砂球本体：乳白偏青 -->
+    <radialGradient id="frostBody" cx="0.38" cy="0.30" r="0.92">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.36" stop-color="#fbfefd"/>
+      <stop offset="0.64" stop-color="#f4fbfa"/>
+      <stop offset="0.86" stop-color="#ecf7f5"/>
+      <stop offset="1" stop-color="#e2f1ee"/>
+    </radialGradient>
+
+    <!-- 磨砂球上左高光 -->
+    <radialGradient id="frostGloss" cx="0.34" cy="0.24" r="0.58">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.82"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 磨砂球底部内阴影 -->
+    <radialGradient id="frostAO" cx="0.5" cy="0.68" r="0.58">
+      <stop offset="0.76" stop-color="#0d3b38" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0d3b38" stop-opacity="0.07"/>
+    </radialGradient>
+
+    <!-- 磨砂颗粒 -->
+    <filter id="frostGrain" x="0" y="0" width="100%" height="100%"
+            color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="23" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.24" intercept="0"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- 中心球落在扇区上的接触阴影 -->
+    <radialGradient id="pearlShadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.30" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.62" stop-color="#000000" stop-opacity="0.10"/>
+      <stop offset="0.84" stop-color="#000000" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 整体投影：透明背景用 feDropShadow，避免径向渐变在透明底上显成灰雾 -->
+    <filter id="ballShadow" x="-20%" y="-20%" width="140%" height="140%"
+            color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0b1c2b" flood-opacity="0.26"/>
+    </filter>
+
+    <clipPath id="sectorClip"><circle cx="512" cy="512" r="464"/></clipPath>
+    <clipPath id="frostClip"><circle cx="512" cy="512" r="154"/></clipPath>
+  </defs>
+
+  <g filter="url(#ballShadow)">
+    <!-- 扇区 -->
+    <g clip-path="url(#sectorClip)">
+        <path d="M 512 512 L 512.00 48.00 A 464 464 0 0 1 976.00 512.00 Z" fill="#329dfa" stroke="#ffffff" stroke-width="21" stroke-linejoin="round"/>
+        <path d="M 512 512 L 976.00 512.00 A 464 464 0 0 1 512.00 976.00 Z" fill="#fa4d47" stroke="#ffffff" stroke-width="21" stroke-linejoin="round"/>
+        <path d="M 512 512 L 512.00 976.00 A 464 464 0 0 1 48.00 512.00 Z" fill="#23d376" stroke="#ffffff" stroke-width="21" stroke-linejoin="round"/>
+        <path d="M 512 512 L 48.00 512.00 A 464 464 0 0 1 512.00 48.00 Z" fill="#fa9e29" stroke="#ffffff" stroke-width="21" stroke-linejoin="round"/>
+    </g>
+
+    <!-- 球体高光 / 暗角 -->
+    <circle cx="512" cy="512" r="480" fill="url(#lit)"/>
+    <circle cx="512" cy="512" r="480" fill="url(#dim)"/>
+
+    <!-- 外圈白色包边 -->
+    <circle cx="512" cy="512" r="472" fill="none"
+            stroke="#ffffff" stroke-width="16"/>
+    <circle cx="512" cy="512" r="464" fill="none"
+            stroke="#0d3b38" stroke-opacity="0.055" stroke-width="2"/>
+
+    <!-- 中心球的接触阴影 -->
+    <circle cx="512" cy="519" r="189" fill="url(#pearlShadow)"/>
+
+    <!-- 中心磨砂球 -->
+    <circle cx="512" cy="512" r="154" fill="url(#frostBody)"/>
+    <g clip-path="url(#frostClip)">
+      <rect x="358" y="358"
+            width="308" height="308"
+            filter="url(#frostGrain)" fill="#c3ccd6"/>
+    </g>
+    <circle cx="512" cy="512" r="154" fill="url(#frostGloss)"/>
+    <circle cx="512" cy="512" r="154" fill="url(#frostAO)"/>
+    <circle cx="512" cy="512" r="152.25" fill="none"
+            stroke="#ffffff" stroke-opacity="0.42" stroke-width="3.5"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "Taskball · Task Status Ball",
+    "description": "A draggable floating ball for cross-session task states, completion tracking, and transition notices."
+  },
+  "taskball": {
+    "ball": {
+      "empty": "No active task states"
+    },
+    "settings": {
+      "pending": "Taskball settings will be available after the UI design phase."
+    }
+  }
+}
